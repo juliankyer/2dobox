@@ -1,0 +1,167 @@
+/*#E5F3F2 BACKGROUND
+#00A79D IDEA-title, SAVE bttn,
+#6D6E71 BOX-title, idea title, quality
+#FFFFFF SAVE-rext
+#045E55 SAVE-hover
+#939598 IDEA body,
+#D1D3D4 Idea divider line*/
+
+/*BASE STYLES*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  background-color: #E5F3F2;
+  width: 100vw;
+}
+
+input {
+  height: 25px;
+  margin: 10px;
+  width: 80vw;
+  font-size: 15px;
+  max-width: 330px;
+}
+
+.idea-body {
+  height: 100px;
+}
+
+.save-button {
+  height: 30px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  background-color: #00A79D;
+  text-decoration: none;
+  border: none;
+}
+
+.search-input {
+  height: 30px;
+  margin-top: 20px;
+  border-style: groove;
+}
+
+/*CARD LAYOUT*/
+
+.delete {
+  background-image: url(../Images/delete.svg);
+  background-repeat: no-repeat;
+}
+
+.downvote {
+  background-image:url(../Images/downvote.svg);
+}
+
+.editable-body {
+  margin: 18px 0px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.idea-render {
+  margin: 15px 0px;
+  padding-bottom: 15px;
+  width: 80vw;
+  max-width: 330px;
+  color: #6D6E71;
+  border-bottom: 1px solid #D1D3D4;
+  font-family: "Roboto Slab", serif;
+}
+
+.id-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.upvote {
+  background-image:url(../Images/upvote.svg);
+}
+
+/*CARD RENDER SECTION*/
+
+.idea-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.idea-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.title-render {
+  font-size: 25px;
+}
+
+/*THEME STYLES*/
+
+.button {
+  height: 19px;
+  width: 19px;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+}
+
+h1 {
+  margin: 20px 5px 10px;
+  color: #00A79D;
+  font-size: 40px;
+  font-family: "Roboto Slab", serif;
+}
+
+.quality-text {
+  font-size: 15px;
+  width: 50vw;
+  font-family: "Open Sans", sans-serif;
+}
+
+span {
+  color: #6D6E71;
+}
+
+/*STATE CHANGES*/
+
+.delete:hover {
+  background-image: url(../Images/delete-hover.svg);
+}
+
+.downvote:hover {
+  background-image:url(../Images/downvote-hover.svg);
+}
+
+.save-button:hover {
+  background-color: #045E55;
+}
+
+.upvote:hover {
+  background-image:url(../Images/upvote-hover.svg);
+}
+
+
+@media screen and (min-width: 650px) {
+  input, .editable-body, .idea-render, .idea-section {
+    width: 50vw;
+    max-width: 460px;
+  }
+
+  .idea-body {
+    height: 25px;
+  }
+
+}
