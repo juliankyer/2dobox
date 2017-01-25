@@ -1,0 +1,42 @@
+{
+  "name": "2dobox",
+  "version": "1.0.0",
+  "main": "jquery.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline",
+    "build": "webpack",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliankyer/2dobox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juliankyer/2dobox/issues"
+  },
+  "homepage": "https://github.com/juliankyer/2dobox#readme",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.22.0",
+    "chai": "^3.5.0",
+    "css-loader": "^0.26.1",
+    "mocha": "^3.2.0",
+    "mocha-loader": "^1.1.0",
+    "node-sass": "^4.3.0",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "mocha": "^3.2.0",
+    "selenium-webdriver": "^3.0.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": ""
+}
