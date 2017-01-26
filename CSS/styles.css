@@ -26,12 +26,16 @@ form {
   width: 100vw;
 }
 
+.title-color {
+  color: #6D6E71;
+}
+
 input {
   height: 25px;
   margin: 10px;
   width: 80vw;
   font-size: 15px;
-  max-width: 330px;
+  max-width: 460px;
 }
 
 .todo-task {
@@ -64,16 +68,27 @@ input {
   background-image:url(../Images/downvote.svg);
 }
 
+.upvote {
+  background-image:url(../Images/upvote.svg);
+}
+
+.done {
+  background-image:url(../Images/small-diamond.png);
+  background-repeat: no-repeat;
+  margin: 10px 0px;
+}
+
 .editable-body {
-  margin: 18px 0px;
+  margin: 15px 0px;
   font-family: "Open Sans", sans-serif;
+  min-height: 40px;
 }
 
 .todo-render {
-  margin: 15px 0px;
-  padding-bottom: 15px;
+  margin: 10px 0px;
+  padding: 10px 0px 5px;
   width: 80vw;
-  max-width: 330px;
+  max-width: 460px;
   color: #6D6E71;
   border-bottom: 1px solid #D1D3D4;
   font-family: "Roboto Slab", serif;
@@ -84,9 +99,12 @@ input {
   justify-content: space-between;
 }
 
-.upvote {
-  background-image:url(../Images/upvote.svg);
+#button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 
 /*CARD RENDER SECTION*/
 
@@ -111,8 +129,8 @@ input {
 /*THEME STYLES*/
 
 .button {
-  height: 19px;
-  width: 19px;
+  height: 25px;
+  width: 25px;
   background-color: transparent;
   color: transparent;
   border: none;
@@ -131,7 +149,7 @@ h1 {
   font-family: "Open Sans", sans-serif;
 }
 
-span {
+label {
   color: #6D6E71;
 }
 
@@ -153,15 +171,19 @@ span {
   background-image:url(../Images/upvote-hover.svg);
 }
 
+.done:hover {
+  background-image:url(../Images/small-diamond-h.png);
+}
+
 
 @media screen and (min-width: 650px) {
-  input, .editable-body, .idea-render, .idea-section {
-    width: 50vw;
+  input, .editable-body, .todo-render, .todo-section {
+    width: 75vw;
     max-width: 460px;
   }
 
-  .idea-body {
-    height: 25px;
+  .editable-body {
+    min-height: 50px;
   }
 
 }
