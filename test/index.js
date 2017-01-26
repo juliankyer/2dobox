@@ -22,7 +22,7 @@ describe('testing ideabox', function() {
     const task = driver.findElement({ className: 'xxxxxxx'});
 
     title.sendKeys('This is a title')
-    title.getAttribute('value').then((value)=> {
+      title.getAttribute('value').then((value)=> {
       assert.equal(value, 'This is a title');
     });
     task.sendKeys('This is a task');

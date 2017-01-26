@@ -42,7 +42,7 @@ input {
   height: 100px;
 }
 
-.save-button {
+.save-button, .completed-todos {
   height: 30px;
   margin-bottom: 20px;
   color: #FFFFFF;
@@ -92,6 +92,10 @@ input {
   color: #6D6E71;
   border-bottom: 1px solid #D1D3D4;
   font-family: "Roboto Slab", serif;
+}
+
+.task-completed {
+  opacity: .3;
 }
 
 .id-wrapper {
