@@ -7,17 +7,24 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:700" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+
   <body>
-    <form>
-      <h1 tabindex="0">2Do<span class="title-color">Box</span></h1>
-        <input tabindex="1" type="text" placeholder="Title" class="todo-title" aria-labelledby="To do title">
-        <input tabindex="1" type="text" placeholder="Task" class="todo-task" aria-labelledby="To do task">
-        <input tabindex="1" type="submit" value="save" class="save-button">
-        <input tabindex="1" type="submit" value="show completed to-dos" class="completed-todos">
-    </form>
-    <article class="todo-search">
+    <section>
+      <form>
+        <h1 tabindex="0">2Do<span class="title-color">Box</span></h1>
+          <input tabindex="1" type="text" placeholder="Title" class="todo-title" aria-labelledby="To do title">
+          <input tabindex="1" type="text" placeholder="Task" class="todo-task" aria-labelledby="To do task">
+          <input tabindex="1" type="submit" value="save" class="save-button">
+          <input tabindex="1" type="submit" value="show completed to-dos" class="completed-todos">
+      </form>
+    </section>
+
+    <section class="todo-search">
       <input type="search" placeholder="Search" class="search-input">
-      <section class="list-section">
+    </section>
+
+    <section class="list-section">
+    </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/jquery.js"><\/script>')</script>
     <script src="main.bundle.js"></script>
