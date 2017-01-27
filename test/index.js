@@ -5,8 +5,8 @@ const test      = require('selenium-webdriver/testing');
 describe('testing ideabox', function() {
   let driver;
 
+  this.timeout(10000);
   test.beforeEach(()=> {
-    this.timeout(15000);
     driver = new webdriver.Builder()
                           .forBrowser('chrome')
                           .build();
@@ -67,14 +67,31 @@ describe('testing ideabox', function() {
     });
     task.getText().then((copy)=> {
       assert.equal(copy, '');
-    });  
+    });
   });
 
-  // test.it('should persist saved tasks when refreshed', ()=> {
-  //
-  // });
-  //
-  //
+  test.it('should persist saved tasks when refreshed', ()=> {
+    const title = driver.findElement({ className: 'todo-title'});
+    const task = driver.findElement({ className: 'todo-task'});
+    const button = driver.findElement({ className: 'save-button'});
+
+    title.sendKeys('Test title')
+    task.sendKeys('Test Task')
+    button.click();
+    driver.navigate().refresh();
+
+    const renderTitle = driver.findElement({ className: 'title-render'});
+    const body = driver.findElement({ className: 'editable-body'});
+
+    renderTitle.getText().then((copy)=> {
+      assert.equal(copy, 'Test title');
+    });
+    body.getText().then((copy)=> {
+      assert.equal(copy, 'Test Task');
+    });
+  });
+
+
   // test.it('when delete is clicked, the corresponding task should be removed from DOM', ()=> {
   //
   // });
