@@ -158,22 +158,22 @@ describe('testing ideabox', function() {
   //   // WHERE DO WE GO FROM HERE?!
   //   });
 
-  test.it('when task is deleted, it should not persist on browser refresh', ()=> {
-      const title = driver.findElement({ className: 'todo-title'});
-      const task = driver.findElement({ className: 'todo-task'});
-      const button = driver.findElement({ className: 'save-button'});
-
-      title.sendKeys('Test title');
-      task.sendKeys('Test task');
-      button.click();
-
-      const delete = driver.findElement({ className: 'delete'});
-      delete.click();
-      driver.navigate().refresh();
-      // FIGURE OUT HOW TO DETERMINE THAT THE IDEA IS NO LONGER THERE
-    });
-
-    
+  // test.it('when task is deleted, it should not persist on browser refresh', ()=> {
+  //     const title = driver.findElement({ className: 'todo-title'});
+  //     const task = driver.findElement({ className: 'todo-task'});
+  //     const button = driver.findElement({ className: 'save-button'});
+  //
+  //     title.sendKeys('Test title');
+  //     task.sendKeys('Test task');
+  //     button.click();
+  //
+  //     const delete = driver.findElement({ className: 'delete'});
+  //     delete.click();
+  //     driver.navigate().refresh();
+  //     // FIGURE OUT HOW TO DETERMINE THAT THE IDEA IS NO LONGER THERE
+  //   });
+  //
+  //
 
   });
 
