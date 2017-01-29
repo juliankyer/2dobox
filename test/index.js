@@ -167,13 +167,13 @@ describe('testing ideabox', function() {
       task.sendKeys('Test task');
       button.click();
 
-      const delete = driver.findElement({ className: 'delete'});
-      delete.click();
+      const deleteBtn = driver.findElement({ className: 'delete'});
+      deleteBtn.click();
       driver.navigate().refresh();
       // FIGURE OUT HOW TO DETERMINE THAT THE IDEA IS NO LONGER THERE
     });
 
-    
+
 
   });
 
