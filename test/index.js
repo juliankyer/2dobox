@@ -50,7 +50,6 @@ describe('testing ToDo Box', function() {
     body.getText().then((copy)=> {
       assert.equal(copy, 'Test Task');
     });
-
   });
 
   test.it('should clear input fields after save is clicked', ()=> {
@@ -123,7 +122,6 @@ describe('testing ToDo Box', function() {
     qualityText.getText().then((copy)=> {
       assert.equal(copy, 'importance: high');
     });
-
   });
 
   test.it('task importance should be downvoteable', ()=> {
@@ -143,6 +141,7 @@ describe('testing ToDo Box', function() {
     qualityText.getText().then((copy)=> {
       assert.equal(copy, 'importance: low');
     });
+  });
 
   test.it('when delete is clicked, the corresponding task should be removed from DOM', ()=> {
     const title = driver.findElement({ className: 'todo-title'});
@@ -152,11 +151,18 @@ describe('testing ToDo Box', function() {
     title.sendKeys('Test title');
     task.sendKeys('Test task');
     button.click();
+    title.sendKeys('Test title2');
+    task.sendKeys('Test task2');
+    button.click();
+
 
     const deleteBtn = driver.findElement({ className: 'delete'});
     deleteBtn.click();
-    // WHERE DO WE GO FROM HERE?!
+    const titleRender = driver.findElement({ className: 'title-render'});
+    titleRender.getText().then((copy)=> {
+      assert.equal(copy, 'Test title');
     });
+  });
 
   test.it('when task is deleted, it should not persist on browser refresh', ()=> {
       const title = driver.findElement({ className: 'todo-title'});
@@ -166,44 +172,85 @@ describe('testing ToDo Box', function() {
       title.sendKeys('Test title');
       task.sendKeys('Test task');
       button.click();
+      title.sendKeys('Test title2');
+      task.sendKeys('Test task2');
+      button.click();
 
       const deleteBtn = driver.findElement({ className: 'delete'});
       deleteBtn.click();
       driver.navigate().refresh();
-      // FIGURE OUT HOW TO DETERMINE THAT THE IDEA IS NO LONGER THERE
+      driver.findElements({ className: 'todo-render'}).then((cards)=> {
+        assert.equal(cards.length, 1);
+      });
     });
 
+    test.it('existing task body and title should be editable, and changes should persist on focus-out and refresh', ()=> {
+      const title = driver.findElement({ className: 'todo-title'});
+      const task = driver.findElement({ className: 'todo-task'});
+      const button = driver.findElement({ className: 'save-button'});
 
-  // test.it('when task is deleted, it should not persist on browser refresh', ()=> {
-  //     const title = driver.findElement({ className: 'todo-title'});
-  //     const task = driver.findElement({ className: 'todo-task'});
-  //     const button = driver.findElement({ className: 'save-button'});
-  //
-  //     title.sendKeys('Test title');
-  //     task.sendKeys('Test task');
-  //     button.click();
-  //
-  //     const delete = driver.findElement({ className: 'delete'});
-  //     delete.click();
-  //     driver.navigate().refresh();
-  //     // FIGURE OUT HOW TO DETERMINE THAT THE IDEA IS NO LONGER THERE
-  //   });
-  //
-  //
+      title.sendKeys('Test title');
+      task.sendKeys('Test task');
+      button.click();
+
+      const titleRender = driver.findElement({ className: 'title-render'});
+      titleRender.sendKeys('Edit this: ');
+      task.click();
+      driver.navigate().refresh().then(()=>{
+        const newTitle = driver.findElement({ className: 'title-render' });
+        return newTitle.getText()
+      }).then((text)=> {
+        assert.equal(text, 'Edit this: Test title');
+      });
+  });
+
+    test.it('when browser is refreshed, completed tasks should not be displayed', ()=> {
+      const title = driver.findElement({ className: 'todo-title' });
+      const task = driver.findElement({ className: 'todo-task' });
+      const button = driver.findElement({ className: 'save-button' });
+
+      title.sendKeys('Test title');
+      task.sendKeys('Test task');
+      button.click();
+
+      const completedBtn = driver.findElement({ className: 'done' });
+      completedBtn.click();
+      driver.navigate().refresh();
+      driver.findElements({ className: 'todo-render' }).then((cards)=> {
+        assert.equal(cards, 0);
+      });
+    });
+
+    test.it.only('should have a "show completed todos" button that displays hidden, completed tasks at the top of the list', ()=> {
+      const title = driver.findElement({ className: 'todo-title' });
+      const task = driver.findElement({ className: 'todo-task' });
+      const button = driver.findElement({ className: 'save-button' });
+
+      title.sendKeys('Test title');
+      task.sendKeys('Test task');
+      button.click();
+
+      const completedBtn = driver.findElement({ className: 'done' });
+      completedBtn.click();
+      driver.navigate().refresh();
+      driver.findElements({ className: 'todo-render' }).then((cards)=> {
+        assert.equal(cards.length, 0);
+      });
+
+      const showToDo = driver.findElement({ className: 'completed-todos' });
+      showToDo.click();
+      driver.findElements({ className: 'todo-render' }).then((cards)=> {
+        assert.equal(cards.length, 1);
+      });
+    });
+
 
   });
 
 
 
-  //
-  // test.it('existing task body and title should be editable, and changes should persist on focus-out/enter', ()=> {
-  //
-  // });
-  //
-  // test.it('edited task body and title should persist on refresh', ()=> {
-  //
-  // });
-  //
+
+
   // test.it('should have a live-search feature for filtering through ideas', ()=> {
   //
   // });
@@ -212,15 +259,11 @@ describe('testing ToDo Box', function() {
   //
   // });
   //
-  // test.it('when browser is refreshed, completed tasks should not be displayed', ()=> {
+
   //
-  // });
-  //
-  // test.it('should have a "show completed todos" button that displays hidden, completed tasks at the top of the list', ()=> {
-  //
-  // });
+
   //
 
 
   // PHASE THREE TESTS UNDER HERE
-});
+// });
