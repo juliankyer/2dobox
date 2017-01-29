@@ -2,7 +2,7 @@ const assert    = require('assert');
 const webdriver = require('selenium-webdriver');
 const test      = require('selenium-webdriver/testing');
 
-describe('testing ideabox', function() {
+describe('testing ToDo Box', function() {
   let driver;
 
   this.timeout(10000);
@@ -144,19 +144,19 @@ describe('testing ideabox', function() {
       assert.equal(copy, 'importance: low');
     });
 
-  // test.it('when delete is clicked, the corresponding task should be removed from DOM', ()=> {
-  //   const title = driver.findElement({ className: 'todo-title'});
-  //   const task = driver.findElement({ className: 'todo-task'});
-  //   const button = driver.findElement({ className: 'save-button'});
-  //
-  //   title.sendKeys('Test title');
-  //   task.sendKeys('Test task');
-  //   button.click();
-  //
-  //   const delete = driver.findElement({ className: 'delete'});
-  //   delete.click();
-  //   // WHERE DO WE GO FROM HERE?!
-  //   });
+  test.it('when delete is clicked, the corresponding task should be removed from DOM', ()=> {
+    const title = driver.findElement({ className: 'todo-title'});
+    const task = driver.findElement({ className: 'todo-task'});
+    const button = driver.findElement({ className: 'save-button'});
+
+    title.sendKeys('Test title');
+    task.sendKeys('Test task');
+    button.click();
+
+    const deleteBtn = driver.findElement({ className: 'delete'});
+    deleteBtn.click();
+    // WHERE DO WE GO FROM HERE?!
+    });
 
   test.it('when task is deleted, it should not persist on browser refresh', ()=> {
       const title = driver.findElement({ className: 'todo-title'});
