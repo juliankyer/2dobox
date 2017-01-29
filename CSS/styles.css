@@ -46,7 +46,7 @@ input {
 .save-button, .completed-todos {
   height: 30px;
   margin-bottom: 20px;
-  color: #FFFFFF;
+  color: #000000;
   background-color: #00A79D;
   text-decoration: none;
   border: none;
@@ -142,8 +142,8 @@ input {
 
 h1 {
   margin: 20px 5px 10px;
-  color: #00A79D;
-  font-size: 40px;
+  color: ##00615A;
+  font-size: 60px;
   font-family: "Roboto Slab", serif;
 }
 
