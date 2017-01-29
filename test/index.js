@@ -221,7 +221,7 @@ describe('testing ToDo Box', function() {
       });
     });
 
-    test.it.only('should have a "show completed todos" button that displays hidden, completed tasks at the top of the list', ()=> {
+    test.it('should have a "show completed todos" button that displays hidden, completed tasks at the top of the list', ()=> {
       const title = driver.findElement({ className: 'todo-title' });
       const task = driver.findElement({ className: 'todo-task' });
       const button = driver.findElement({ className: 'save-button' });
@@ -244,26 +244,24 @@ describe('testing ToDo Box', function() {
       });
     });
 
+    // test.it('should have a live-search feature for filtering through ideas', ()=> {
+    //
+    // });
+
+    test.it('when completed task is clicked, state of task should change', ()=> {
+      const title = driver.findElement({ className: 'todo-title' });
+      const task = driver.findElement({ className: 'todo-task' });
+      const button = driver.findElement({ className: 'save-button' });
+
+      title.sendKeys('Test title');
+      task.sendKeys('Test task');
+      button.click();
+
+      const completed = driver.findElement({ className: 'done' });
+      completed.click();
+      driver.findElements({ className: 'task-completed'}).then((cards)=> {
+        assert.equal(cards.length, 1);
+      });
+    });
 
   });
-
-
-
-
-
-  // test.it('should have a live-search feature for filtering through ideas', ()=> {
-  //
-  // });
-  //
-  // test.it('when completed task is clicked, state of task should change', ()=> {
-  //
-  // });
-  //
-
-  //
-
-  //
-
-
-  // PHASE THREE TESTS UNDER HERE
-// });
