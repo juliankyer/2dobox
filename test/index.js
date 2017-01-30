@@ -260,7 +260,7 @@ describe('testing ToDo Box', function() {
       });
     });
 
-    test.it.only('should have a live search feature', ()=> {
+    test.it('should have a live search feature', ()=> {
       const title = driver.findElement({ className: 'todo-title' });
       const task = driver.findElement({ className: 'todo-task' });
       const button = driver.findElement({ className: 'save-button' });
