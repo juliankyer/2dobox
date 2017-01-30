@@ -244,10 +244,6 @@ describe('testing ToDo Box', function() {
       });
     });
 
-    // test.it('should have a live-search feature for filtering through ideas', ()=> {
-    //
-    // });
-
     test.it('when completed task is clicked, state of task should change', ()=> {
       const title = driver.findElement({ className: 'todo-title' });
       const task = driver.findElement({ className: 'todo-task' });
@@ -264,4 +260,24 @@ describe('testing ToDo Box', function() {
       });
     });
 
+    test.it.only('should have a live search feature', ()=> {
+      const title = driver.findElement({ className: 'todo-title' });
+      const task = driver.findElement({ className: 'todo-task' });
+      const button = driver.findElement({ className: 'save-button' });
+      const searchInput = driver.findElement({ className: 'search-input'});
+
+      title.sendKeys('Car');
+      task.sendKeys('Car Car');
+      button.click();
+      searchInput.sendKeys('car');
+
+      const card = driver.findElement({ className: 'todo-render' });
+      card.isDisplayed().then((card)=>{
+        assert.equal(card, true);
+      });
+      searchInput.sendKeys('Hat');
+      card.isDisplayed().then((card)=> {
+        assert.equal(card, false);
+      });
+    });
   });
