@@ -280,4 +280,12 @@ describe('testing ToDo Box', function() {
         assert.equal(card, false);
       });
     });
+
+    test.it('should have a character count for body input', ()=> {
+      const task = driver.findElement({ className: 'todo-task' });
+      task.sendKeys('Hat');
+      driver.findElement({ className: 'char-count'}).getText().then((text)=>{
+        assert.equal(text, 'Characters Remaining: 117');
+      });
+    });
   });
