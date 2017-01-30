@@ -23,8 +23,8 @@ describe('testing ToDo Box', function() {
     const task = driver.findElement({ className: 'todo-task'});
 
     title.sendKeys('This is a title')
-      title.getAttribute('value').then((value)=> {
-      assert.equal(value, 'This is a title');
+    title.getAttribute('value').then((value)=> {
+    assert.equal(value, 'This is a title');
     });
     task.sendKeys('This is a task');
     task.getAttribute('value').then((value)=> {
@@ -288,5 +288,4 @@ describe('testing ToDo Box', function() {
       });
     });
 
-    // test.it.only()
   });
