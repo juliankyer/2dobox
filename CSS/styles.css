@@ -58,6 +58,10 @@ input {
   border: none;
 }
 
+.save-button:disabled {
+  background-color: #6D6E71;
+}
+
 .search-input {
   height: 30px;
   margin-top: 20px;
