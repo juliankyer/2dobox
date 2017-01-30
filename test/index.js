@@ -155,7 +155,6 @@ describe('testing ToDo Box', function() {
     task.sendKeys('Test task2');
     button.click();
 
-
     const deleteBtn = driver.findElement({ className: 'delete'});
     deleteBtn.click();
     const titleRender = driver.findElement({ className: 'title-render'});
@@ -289,5 +288,5 @@ describe('testing ToDo Box', function() {
       });
     });
 
-    test.it.only()
+    // test.it.only()
   });
