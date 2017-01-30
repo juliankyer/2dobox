@@ -49,7 +49,7 @@ input {
   margin: 0px 0px 15px;
 }
 
-.save-button, .completed-todos {
+.save-button, .completed-todos,  {
   height: 30px;
   margin-bottom: 20px;
   color: #000000;
