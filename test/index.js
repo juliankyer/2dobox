@@ -155,7 +155,6 @@ describe('testing ToDo Box', function() {
     task.sendKeys('Test task2');
     button.click();
 
-
     const deleteBtn = driver.findElement({ className: 'delete'});
     deleteBtn.click();
     const titleRender = driver.findElement({ className: 'title-render'});
@@ -288,4 +287,5 @@ describe('testing ToDo Box', function() {
         assert.equal(text, 'Characters Remaining: 117');
       });
     });
+
   });
