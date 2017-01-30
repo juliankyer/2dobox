@@ -169,6 +169,12 @@ label {
 
 .save-button:hover {
   background-color: #045E55;
+  color: #FFFFFF;
+}
+
+.completed-todos:hover {
+  background-color: #045E55;
+  color: #FFFFFF;
 }
 
 .upvote:hover {
