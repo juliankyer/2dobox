@@ -43,6 +43,12 @@ input {
   height: 100px;
 }
 
+.char-count {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  margin: 0px 0px 15px;
+}
+
 .save-button, .completed-todos {
   height: 30px;
   margin-bottom: 20px;
