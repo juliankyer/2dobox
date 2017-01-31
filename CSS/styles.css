@@ -49,9 +49,9 @@ input {
   margin: 0px 0px 15px;
 }
 
-.save-button, .completed-todos,  {
+.save-button, .completed-todos {
   height: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #000000;
   background-color: #00A79D;
   text-decoration: none;
@@ -70,6 +70,25 @@ input {
 
 .list-section {
   margin: 30px 0px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px 20px;
+  width: 80vw;
+}
+
+.quality-filter {
+  height: 25px;
+  width: 75px;
+  margin: 5px;
+  color: #000000;
+  background-color: #00A79D;
+  text-decoration: none;
+  border: none;
 }
 
 /*CARD LAYOUT*/
@@ -207,7 +226,7 @@ label {
 
 
 @media screen and (min-width: 650px) {
-  input, .editable-body, .todo-render, .todo-section {
+  input, .editable-body, .todo-render, .todo-section, {
     width: 75vw;
     max-width: 460px;
   }
@@ -216,4 +235,8 @@ label {
     min-height: 50px;
   }
 
+  .filter-buttons {
+    width: 75vw;
+    max-width: 460px;
+  }
 }
