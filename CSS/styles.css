@@ -94,20 +94,20 @@ input {
 /*CARD LAYOUT*/
 
 .delete {
-  background-image: url(../Images/delete.svg);
+  background-image: url(../Images/delete.png);
   background-repeat: no-repeat;
 }
 
 .downvote {
-  background-image:url(../Images/downvote.svg);
+  background-image:url(../Images/arrow-pointing-down.png);
 }
 
 .upvote {
-  background-image:url(../Images/upvote.svg);
+  background-image:url(../Images/arrow-up.png);
 }
 
 .done {
-  background-image:url(../Images/small-diamond.png);
+  background-image:url(../Images/checked-symbol.png);
   background-repeat: no-repeat;
   margin: 10px 0px;
 }
@@ -199,11 +199,11 @@ label {
 /*STATE CHANGES*/
 
 .delete:hover {
-  background-image: url(../Images/delete-hover.svg);
+  background-image: url(../Images/deletehover.png);
 }
 
 .downvote:hover {
-  background-image:url(../Images/downvote-hover.svg);
+  background-image:url(../Images/downhover.png);
 }
 
 .save-button:hover {
@@ -217,11 +217,11 @@ label {
 }
 
 .upvote:hover {
-  background-image:url(../Images/upvote-hover.svg);
+  background-image:url(../Images/uphover.png);
 }
 
 .done:hover {
-  background-image:url(../Images/small-diamond-h.png);
+  background-image:url(../Images/donehover.png);
 }
 
 
