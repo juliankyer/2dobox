@@ -198,22 +198,19 @@ label {
 
 /*STATE CHANGES*/
 
+.save-button:hover,
+.completed-todos:hover,
+.quality-filter:hover {
+  background-color: #045E55;
+  color: #FFFFFF;
+}
+
 .delete:hover {
   background-image: url(../Images/deletehover.png);
 }
 
 .downvote:hover {
   background-image:url(../Images/downhover.png);
-}
-
-.save-button:hover {
-  background-color: #045E55;
-  color: #FFFFFF;
-}
-
-.completed-todos:hover {
-  background-color: #045E55;
-  color: #FFFFFF;
 }
 
 .upvote:hover {
